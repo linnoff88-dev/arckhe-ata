@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+dist/
+bench/results/*.json
+!bench/results/.gitkeep
+guia/assets/*.codex.log
