@@ -15,7 +15,7 @@ buffer de cada faixa (mesmo relógio para as duas) -> ``start_measured=True``.
 
 Permissão negada (``code = permission_denied``) NUNCA é falha muda: a faixa vira ``silent=True`` (o arquivo é
 criado com zeros se o helper não o criou), o motivo ``far_silent``/``mic_silent`` entra no bundle e um aviso
-pt-BR explica onde liberar ("Ajustes > Privacidade e Segurança > Gravação de Tela e Áudio do Sistema").
+pt-BR explica onde liberar ("Ajustes > Privacidade e Segurança > Gravação de Tela e áudio do Sistema").
 """
 
 from __future__ import annotations
@@ -57,7 +57,7 @@ log = logging.getLogger("ata.capture.macos")
 EVENTS = ("started", "level", "stopped", "error", "devices")
 ERROR_CODES = ("permission_denied", "device_missing", "tap_failed", "unsupported_os", "write_failed")
 PERMISSION_HINT = {
-    "far": "libere o Ata em Ajustes do Sistema > Privacidade e Segurança > Gravação de Tela e Áudio do Sistema "
+    "far": "libere o Ata em Ajustes do Sistema > Privacidade e Segurança > Gravação de Tela e áudio do Sistema "
            "(\"Somente áudio do sistema\")",
     "mic": "libere o Ata em Ajustes do Sistema > Privacidade e Segurança > Microfone",
 }

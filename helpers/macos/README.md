@@ -29,7 +29,7 @@ export ATA_AUDIO_HELPER=~/caminho/ata-audio
 
 ## Permissões
 
-- **Gravação de áudio do sistema**: Ajustes do Sistema > Privacidade e Segurança > Gravação de Tela e Áudio
+- **Gravação de áudio do sistema**: Ajustes do Sistema > Privacidade e Segurança > Gravação de Tela e áudio
   do Sistema > "Somente áudio do sistema" — libere o Terminal (ou o app que roda o `ata`).
 - **Microfone**: Ajustes do Sistema > Privacidade e Segurança > Microfone.
 

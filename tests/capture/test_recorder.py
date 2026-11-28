@@ -159,7 +159,7 @@ def test_stop_after_supervisor_killed(config, fake_capture, pipeline_stub):
 
 
 def test_reused_pid_is_not_ours(config, tmp_path):
-    # PID vivo de outro programa (este pytest) não é supervisor: estado velho, e NINGUÉM leva sinal
+    # PID vivo de outro programa (este pytest) não é supervisor: estado velho, e NINGUéM leva sinal
     meta_dir = bundle.new_bundle_dir(config.recordings, __import__("datetime").datetime.now(), "x")
     bundle.write_meta(meta_dir, bundle.BundleMeta(name=meta_dir.name, created_at="t", tracks={}))
     recorder._write_state(config, {"pid": os.getpid(), "bundle": str(meta_dir), "started_at": "t"})

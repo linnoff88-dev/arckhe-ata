@@ -38,7 +38,7 @@ def _ffmpeg_to_wav(src: Path, dst: Path, ffmpeg: str | None = None) -> None:
 
 
 def load_audio(src: Path, ffmpeg: str | None = None):
-    """Áudio 16 kHz mono int16 de qualquer arquivo (WAV direto, resto via ffmpeg)."""
+    """áudio 16 kHz mono int16 de qualquer arquivo (WAV direto, resto via ffmpeg)."""
     if src.suffix.lower() == ".wav":
         try:
             return audio.read_any_wav(src)

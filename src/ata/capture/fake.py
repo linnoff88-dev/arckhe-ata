@@ -1,6 +1,6 @@
 """Backend de captura sintético (``ATA_CAPTURE=fake``): para testes do gravador, do MCP, do dashboard e do live.
 
-Contrato: ``start()`` escreve JÁ no início um ``far.wav``/``mic.wav`` com uma reunião sintética de
+Contrato: ``start()`` escreve Já no início um ``far.wav``/``mic.wav`` com uma reunião sintética de
 ``ata.testing.synth_meeting`` (as mesmas falas sempre, independente do tempo gravado) e as fixtures dos motores
 fake ao lado (``<wav>.fake-words.json``/``.fake-spans.json``), então o pipeline com ``ATA_ENGINES=fake``
 produz uma nota de verdade. ``stop()`` só mede e devolve as faixas.

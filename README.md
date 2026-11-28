@@ -1,18 +1,18 @@
 # Ata — notas de reunião que não saem da sua máquina
 
-[![Ata: sua reunião vira ata](guia/assets/banner.jpg)](https://inematds.github.io/ata/guia/)
+[![Ata: sua reunião vira ata](guia/assets/banner.jpg)](https://linnoff88-dev.github.io/ata/guia/)
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
 ## 📖 Guia de uso
 
-Guia completo (landing + passo a passo): **https://inematds.github.io/ata/guia/**
+Guia completo (landing + passo a passo): **https://linnoff88-dev.github.io/ata/guia/**
 
 ---
 
 O **Ata** grava a sua reunião em **duas faixas**: o que você ouve (Meet, Zoom, Teams, YouTube) e o que você fala. Depois transcreve na sua máquina, em **português, inglês ou espanhol**, e entrega uma nota em Markdown com cada fala marcada por pessoa. Também gera resumo, decisões e ações com responsável. Não entra bot na call, não precisa de conta e o áudio nunca sai do computador.
 
-- **Licença:** MIT. Projeto aberto do INEMA.
+- **Licença:** MIT. Projeto aberto do ARCKHé AI.
 - **Inspiração:** as ideias do [CrunchLog](https://www.skool.com/aiautomationsbyjack), de Christian Landsteiner (duas faixas, "o microfone é você", gravação como fonte de verdade). O Ata é uma **implementação independente**: nenhuma linha de código do CrunchLog foi usada.
 - **Estado:** 0.1.0. Todas as fases estão implementadas e testadas com motores simulados. Os motores reais (NeMo-Speech.cpp na GPU, onnx na CPU, Ollama) estão implementados, mas **ainda não foram medidos nesta versão** (veja [Estado e limites](#estado-e-limites)).
 
@@ -25,7 +25,7 @@ O **Ata** grava a sua reunião em **duas faixas**: o que você ouve (Meet, Zoom,
 | **pt-BR, EN, ES** | Motor, limpeza de vícios ("né", "tipo"; "um", "uh"; "este", "o sea"), nota, resumo, demo e preparação, tudo por idioma |
 | **GPU ou CPU** | Motor principal: NeMo-Speech.cpp (Parakeet v3 + Nemotron, CUDA no DGX Spark/GB10, Metal no Mac, CPU nos demais). Reserva em processo: onnx-asr + sherpa-onnx |
 | **Resumo local** | Ollama por padrão (JSON com resumo, tópicos, decisões, ações com dono e prazo, perguntas). Opcional: `claude` ou `codex` pela sua assinatura |
-| **Busca e perguntas** | Índice SQLite (FTS5 + vetores) em todas as reuniões. `ata ask` responde com citação `[reunião, mm:ss]` |
+| **Busca e perguntas** | índice SQLite (FTS5 + vetores) em todas as reuniões. `ata ask` responde com citação `[reunião, mm:ss]` |
 | **Preparação** | `ata prep "cliente"` monta a pauta com ações em aberto, decisões e perguntas; os itens se marcam sozinhos na reunião seguinte |
 | **Reconhecer vozes** | Opcional e desligado por padrão: cadastra a voz de uma pessoa e o "Pessoa 2" vira "Ana" nas próximas reuniões |
 | **Segundo cérebro** | `ata connect cerebro --dir ...` escreve a reunião em `fontes/` e as decisões em `decisoes/registro.md`. Também há Obsidian e Agentic OS |
@@ -42,7 +42,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh                      # Linux/mac
 # powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"   # Windows
 
 # 2. Ata (com MCP, modo ao vivo e motor CPU)
-git clone https://github.com/inematds/ata && cd ata
+git clone https://github.com/linnoff88-dev/ata && cd ata
 uv tool install --python 3.12 ".[mcp,live,onnx]"
 
 # 3. Configurar (idioma, pastas, resumo)
@@ -128,4 +128,4 @@ uv run pytest -q -m linux_audio        # gravação real via PipeWire
 
 ## Créditos
 
-Inspirado nas ideias do CrunchLog (Christian Landsteiner). Modelos: NVIDIA Parakeet / Nemotron (NeMo-Speech.cpp), pyannote e WeSpeaker via sherpa-onnx, Ollama. Pesquisa e proposta de arquitetura: `docs/` e o projeto `crunchlog` do INEMA.
+Inspirado nas ideias do CrunchLog (Christian Landsteiner). Modelos: NVIDIA Parakeet / Nemotron (NeMo-Speech.cpp), pyannote e WeSpeaker via sherpa-onnx, Ollama. Pesquisa e proposta de arquitetura: `docs/` e o projeto `crunchlog` do ARCKHé AI.

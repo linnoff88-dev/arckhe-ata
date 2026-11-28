@@ -7,7 +7,7 @@ Contrato:
   callbacks (:class:`StartEstimator`), o que tira o jitter do agendador.
 - áudio do dispositivo (48 kHz estéreo, tipicamente) -> 16 kHz mono int16 por :class:`ChunkResampler`
   (estado entre blocos, sem deriva de arredondamento) e gravado aos poucos por :class:`WavWriter`.
-- keep-alive: o loopback do WASAPI NÃO entrega callbacks quando nada toca. Uma thread completa com zeros pelo
+- keep-alive: o loopback do WASAPI NãO entrega callbacks quando nada toca. Uma thread completa com zeros pelo
   relógio de parede (:func:`pad_samples_needed`), então ``far.wav`` acompanha o tempo real. Isso é normal no
   far; buraco no MIC é anormal e vira ``dropped_frames``.
 - PyAudioWPatch é importado só em ``start()``; fora do win32 -> ``UnsupportedPlatform``.

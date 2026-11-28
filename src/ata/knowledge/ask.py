@@ -3,7 +3,7 @@
 ``ask`` busca evidências (híbrida; restrita a uma reunião quando ``meeting`` é dado), monta um prompt com as
 linhas de evidência e pede ao summarizer uma resposta em ``ANSWER_SCHEMA``.
 
-Quando o provedor é ``none`` ou o motor é o ``fake`` (testes, ``ATA_ENGINES=fake``), NÃO há síntese:
+Quando o provedor é ``none`` ou o motor é o ``fake`` (testes, ``ATA_ENGINES=fake``), NãO há síntese:
 ``answer`` volta ``None`` e as citações são as próprias evidências — quem chama (agente via MCP, usuário)
 lê as evidências. O mesmo acontece se o provedor falhar ou responder fora do schema.
 """

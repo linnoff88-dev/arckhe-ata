@@ -1,18 +1,18 @@
 # Ata — meeting notes that never leave your machine
 
-[![Ata: meetings to minutes](guia/assets/banner-en.jpg)](https://inematds.github.io/ata/guia/en/)
+[![Ata: meetings to minutes](guia/assets/banner-en.jpg)](https://linnoff88-dev.github.io/ata/guia/en/)
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
 ## 📖 User guide
 
-Full guide (landing + step by step): **https://inematds.github.io/ata/guia/en/**
+Full guide (landing + step by step): **https://linnoff88-dev.github.io/ata/guia/en/**
 
 ---
 
 **Ata** records your meeting on **two tracks**: what you hear (Meet, Zoom, Teams, YouTube) and what you say. It then transcribes on your own machine, in **Portuguese, English or Spanish**, and delivers a Markdown note with every line attributed to a speaker. It also produces a summary, decisions and action items with an owner. No bot joins the call, no account is needed, and the audio never leaves the computer.
 
-- **License:** MIT. Open INEMA project.
+- **License:** MIT. Open ARCKHé AI project.
 - **Inspiration:** the ideas of [CrunchLog](https://www.skool.com/aiautomationsbyjack), by Christian Landsteiner (two tracks, "the microphone is you", the recording as the source of truth). Ata is an **independent implementation**: no line of CrunchLog code was used.
 - **Status:** 0.1.0. All phases are implemented and tested with simulated engines. The real engines (NeMo-Speech.cpp on the GPU, onnx on the CPU, Ollama) are implemented but **have not been measured in this version yet** (see [Status and limits](#status-and-limits)).
 
@@ -42,7 +42,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh                      # Linux/mac
 # powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"   # Windows
 
 # 2. Ata (with MCP, live mode and CPU engine)
-git clone https://github.com/inematds/ata && cd ata
+git clone https://github.com/linnoff88-dev/ata && cd ata
 uv tool install --python 3.12 ".[mcp,live,onnx]"
 
 # 3. Configure (language, folders, summary)
@@ -128,4 +128,4 @@ uv run pytest -q -m linux_audio        # real recording via PipeWire
 
 ## Credits
 
-Inspired by the ideas of CrunchLog (Christian Landsteiner). Models: NVIDIA Parakeet / Nemotron (NeMo-Speech.cpp), pyannote and WeSpeaker via sherpa-onnx, Ollama. Research and architecture proposal: `docs/` and INEMA's `crunchlog` project.
+Inspired by the ideas of CrunchLog (Christian Landsteiner). Models: NVIDIA Parakeet / Nemotron (NeMo-Speech.cpp), pyannote and WeSpeaker via sherpa-onnx, Ollama. Research and architecture proposal: `docs/` and ARCKHé AI's `crunchlog` project.

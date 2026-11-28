@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Ata: notas de reunião local-first. Grava a call em duas faixas, transcreve na sua máquina (GPU ou CPU) em português, inglês ou espanhol e entrega uma nota com cada fala por pessoa, resumo, busca e MCP."
 readme = "README.md"
 license = { text = "MIT" }
-authors = [{ name = "INEMA", email = "inematds@gmail.com" }]
+authors = [{ name = "ARCKHé AI", email = "linnoff88-dev@gmail.com" }]
 requires-python = ">=3.12"
 keywords = ["meeting-notes", "transcription", "diarization", "local-first", "pt-BR", "mcp", "parakeet", "nemotron"]
 dependencies = [

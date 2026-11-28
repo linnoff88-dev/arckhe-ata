@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ata — notas de reunião local-first em português, inglês e espanhol</title>
-<meta name="description" content="Ata: grave reuniões em duas faixas, transcreva na sua máquina (GPU ou CPU) em português, inglês ou espanhol e receba a ata com cada fala por pessoa, resumo, busca, MCP e modo ao vivo. Código aberto do INEMA.">
-<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/ata/guia/">
-<link rel="alternate" hreflang="en" href="https://inematds.github.io/ata/guia/en/">
-<link rel="alternate" hreflang="es" href="https://inematds.github.io/ata/guia/es/">
+<meta name="description" content="Ata: grave reuniões em duas faixas, transcreva na sua máquina (GPU ou CPU) em português, inglês ou espanhol e receba a ata com cada fala por pessoa, resumo, busca, MCP e modo ao vivo. Código aberto do ARCKHé AI.">
+<link rel="alternate" hreflang="pt-BR" href="https://linnoff88-dev.github.io/ata/guia/">
+<link rel="alternate" hreflang="en" href="https://linnoff88-dev.github.io/ata/guia/en/">
+<link rel="alternate" hreflang="es" href="https://linnoff88-dev.github.io/ata/guia/es/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -39,8 +39,8 @@
   nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
   nav .brand .emoji{font-size:1.25rem}
   nav .sep{color:var(--mut);opacity:.45}
-  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
-  nav .inema:hover{filter:brightness(1.15)}
+  nav .arckhe{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .arckhe:hover{filter:brightness(1.15)}
   nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
   nav .pro:hover{filter:brightness(1.15)}
   nav .clubpro{display:inline-flex;align-items:center;gap:6px}
@@ -105,9 +105,9 @@
   <a class="brand" href="#top"><span class="emoji">📝</span> Ata</a>
   <span class="sep">|</span>
   <span class="clubpro">
-    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <a class="arckhe" href="https://linnoff88-dev.github.io" target="_blank" rel="noopener">ARCKHé AI.CLUB</a>
     <span class="sep">-</span>
-    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+    <a class="pro" href="https://arckhe.pro" target="_blank" rel="noopener">PRO</a>
   </span>
   <div class="links">
     <a class="sec" href="#oque">O que é</a>
@@ -118,7 +118,7 @@
     <a class="sec" href="#roadmap">Estado</a>
     <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
     <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
-    <a class="btn" href="https://github.com/inematds/ata" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://github.com/linnoff88-dev/ata" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
 
@@ -131,7 +131,7 @@
       <p class="lead">O Ata grava a call em duas faixas (o que você ouve e o que você fala), transcreve na sua máquina com GPU ou CPU e entrega a nota com cada fala por pessoa, resumo, decisões e ações. Sem bot na call, sem conta, sem API paga.</p>
       <div class="cta">
         <a class="btn" href="#guia">Começar o guia</a>
-        <a class="btn ghost" href="https://github.com/inematds/ata" target="_blank" rel="noopener">Ver no GitHub</a>
+        <a class="btn ghost" href="https://github.com/linnoff88-dev/ata" target="_blank" rel="noopener">Ver no GitHub</a>
       </div>
     </div>
     <figure><img src="assets/banner.jpg" alt="Ata: sua reunião vira ata"></figure>
@@ -141,7 +141,7 @@
 <section id="oque"><div class="wrap">
   <span class="chip">O que é</span>
   <h2>Um notetaker de reuniões que fala português e respeita sua privacidade</h2>
-  <p class="sub">Projeto aberto do INEMA (MIT), inspirado nas ideias do CrunchLog, de Christian Landsteiner. É uma implementação independente: nenhuma linha de código dele foi usada. A diferença está em português, inglês e espanhol de primeira classe, Linux como plataforma principal, uso da GPU, resumo local e modo ao vivo sem serviço pago.</p>
+  <p class="sub">Projeto aberto do ARCKHé AI (MIT), inspirado nas ideias do CrunchLog, de Christian Landsteiner. é uma implementação independente: nenhuma linha de código dele foi usada. A diferença está em português, inglês e espanhol de primeira classe, Linux como plataforma principal, uso da GPU, resumo local e modo ao vivo sem serviço pago.</p>
   <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Recursos do Ata: duas faixas, português, inglês e espanhol, GPU ou CPU, resumo local, busca e MCP, modo ao vivo" loading="lazy" style="width:100%;display:block"></figure>
   <div class="grid g3">
     <div class="card"><h3>🎧 Duas faixas, "o microfone é você"</h3><p>A saída de som (Meet, Zoom, Teams) e o microfone são gravados separados. Tudo o que vem do microfone é "Eu"; o gate tira o eco da caixa de som e a separação de falantes só atua do outro lado.</p></div>
@@ -194,7 +194,7 @@
   <div class="step"><div class="b">1</div><div>
     <h3>Instale</h3>
     <p>Os extras trazem o MCP, o modo ao vivo e o motor de CPU. Use <code>".[all]"</code> para tudo, inclusive a captura no Windows.</p>
-<pre><span class="k">git clone</span> <span class="s">https://github.com/inematds/ata</span> && <span class="k">cd</span> ata
+<pre><span class="k">git clone</span> <span class="s">https://github.com/linnoff88-dev/ata</span> && <span class="k">cd</span> ata
 <span class="k">uv tool install</span> --python 3.12 <span class="s">".[mcp,live,onnx]"</span>
 <span class="k">ata</span> --version          <span class="c"># ata 0.1.0</span></pre>
   </div></div>
@@ -235,7 +235,7 @@
 
   <div class="step"><div class="b">6</div><div>
     <h3>Importe o que já existe</h3>
-    <p>Áudio ou vídeo de qualquer formato (passa pelo ffmpeg) vira uma reunião só com a faixa "far". Gravações do CrunchLog também entram.</p>
+    <p>áudio ou vídeo de qualquer formato (passa pelo ffmpeg) vira uma reunião só com a faixa "far". Gravações do CrunchLog também entram.</p>
 <pre><span class="k">ata import</span> entrevista.mp4 --lang es --title <span class="s">"Entrevista Lucía"</span>
 <span class="k">ata process</span> --dry-run ~/CrunchLog/recordings/2026-10-05-1642-demo
 <span class="c"># bundle crunchlog/2 lido: 2 tracks, offsets={"far": 0.0, "mic": 0.0}</span></pre>
@@ -330,9 +330,9 @@
 <footer>
   <div class="wrap">
     <div class="pill">Python 3.12 · uv</div><div class="pill">NeMo-Speech.cpp · Parakeet · Nemotron</div><div class="pill">onnx-asr · sherpa-onnx</div><div class="pill">Ollama</div><div class="pill">SQLite FTS5</div><div class="pill">MCP</div>
-    <p style="margin-top:18px">Ata · MIT · inspirado nas ideias do CrunchLog (Christian Landsteiner) · implementação independente do INEMA ·
-      <a href="https://github.com/inematds/ata">inematds/ata</a> ·
-      <a href="https://inema.club">INEMA.CLUB</a></p>
+    <p style="margin-top:18px">Ata · MIT · inspirado nas ideias do CrunchLog (Christian Landsteiner) · implementação independente do ARCKHé AI ·
+      <a href="https://github.com/linnoff88-dev/ata">linnoff88-dev/ata</a> ·
+      <a href="https://linnoff88-dev.github.io">ARCKHé AI.CLUB</a></p>
   </div>
 </footer>
 

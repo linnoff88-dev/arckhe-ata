@@ -4,7 +4,7 @@
 - **Tetos:** testes sem rede e sem modelos (< 3 min); nenhum download de modelo; memória dos testes < 4 G
 
 ## Resultado
-**Ata** — notetaker de reuniões local-first, implementação independente inspirada nas ideias do CrunchLog (sem código copiado), com todas as fases da proposta (`~/projetos/crunchlog/pesquisa/PROPOSTA-PRODUTO-SUPERIOR.md`) implementadas e testadas com motores simulados (o usuário dispensou testar nos modelos locais), publicado em `inematds/ata` com guia PT/EN/ES e no portal.
+**Ata** — notetaker de reuniões local-first, implementação independente inspirada nas ideias do CrunchLog (sem código copiado), com todas as fases da proposta (`~/projetos/crunchlog/pesquisa/PROPOSTA-PRODUTO-SUPERIOR.md`) implementadas e testadas com motores simulados (o usuário dispensou testar nos modelos locais), publicado em `linnoff88-dev/ata` com guia PT/EN/ES e no portal.
 
 ## Critérios de pronto (verificáveis)
 

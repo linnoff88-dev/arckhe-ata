@@ -1,4 +1,4 @@
-"""Índice de busca das reuniões: SQLite em ``<cache>/ata.db`` (FTS5 + vetores em tabela própria).
+"""índice de busca das reuniões: SQLite em ``<cache>/ata.db`` (FTS5 + vetores em tabela própria).
 
 O índice é descartável: a fonte canônica são os bundles (turns.json, summary.json) e as notas. ``reindex``
 reconstrói tudo. Busca lexical (FTS5/BM25, sem acento), semântica (cosseno em numpy sobre float32
@@ -295,7 +295,7 @@ def reindex(config: Config) -> dict[str, int]:
 
 
 def ensure_index(config: Config) -> None:
-    """Índice vazio mas há reuniões processadas -> reconstrói (primeira busca depois de instalar)."""
+    """índice vazio mas há reuniões processadas -> reconstrói (primeira busca depois de instalar)."""
     con = connect(config)
     try:
         n = con.execute("SELECT COUNT(*) FROM meetings").fetchone()[0]

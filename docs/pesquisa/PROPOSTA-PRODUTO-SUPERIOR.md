@@ -1,6 +1,6 @@
 # Proposta: um notetaker local-first superior ao CrunchLog
 
-Data: 05/10/2026. Base: [PESQUISA-ESTADO-DA-ARTE.md](PESQUISA-ESTADO-DA-ARTE.md) (componentes) e [ANALISE-CRUNCHLOG.md](ANALISE-CRUNCHLOG.md) (o que o CrunchLog faz e onde para). Host principal: spark-922b (NVIDIA GB10, aarch64, Ubuntu 24.04, PipeWire, 128 GB unificados). Projeto INEMA: aberto, gratuito, educacional.
+Data: 05/10/2026. Base: [PESQUISA-ESTADO-DA-ARTE.md](PESQUISA-ESTADO-DA-ARTE.md) (componentes) e [ANALISE-CRUNCHLOG.md](ANALISE-CRUNCHLOG.md) (o que o CrunchLog faz e onde para). Host principal: spark-922b (NVIDIA GB10, aarch64, Ubuntu 24.04, PipeWire, 128 GB unificados). Projeto ARCKHé AI: aberto, gratuito, educacional.
 
 ---
 
@@ -8,15 +8,15 @@ Data: 05/10/2026. Base: [PESQUISA-ESTADO-DA-ARTE.md](PESQUISA-ESTADO-DA-ARTE.md)
 
 | Critério | Fork do CrunchLog (evoluir o código dele) | Recriar do zero (implementação independente, inspirada nas ideias) |
 |---|---|---|
-| **Licença / publicação** | "Evaluation Licence": modificar para uso próprio é permitido, **redistribuir é proibido** (cláusula 3). O fork fica em repo **privado** para sempre, salvo permissão escrita do autor. Não pode ir ao portal INEMA como código, nem receber contribuição externa. | Repo **público** (MIT), no padrão INEMA (`inematds/<nome>`, `guia/`, card no portal). Ideias e arquitetura não são protegidas; só o código e os textos dele. |
+| **Licença / publicação** | "Evaluation Licence": modificar para uso próprio é permitido, **redistribuir é proibido** (cláusula 3). O fork fica em repo **privado** para sempre, salvo permissão escrita do autor. Não pode ir ao portal ARCKHé AI como código, nem receber contribuição externa. | Repo **público** (MIT), no padrão ARCKHé AI (`linnoff88-dev/<nome>`, `guia/`, card no portal). Ideias e arquitetura não são protegidas; só o código e os textos dele. |
 | **Qualidade de partida** | Alta: ~62 k linhas, 1 621 testes, captura Windows/mac pronta, helper Swift, dashboard, MCP, plugin, docs. | Zero código, mas a análise (ANALISE §9) já lista 16 ideias testadas para reaproveitar e os erros a não repetir (§10). |
 | **Velocidade até um produto usável** | Dias: já roda aqui com nossos scripts Linux. | Semanas: MVP Linux em ~4 semanas de build por agente; Windows na 3ª fase; macOS na 4ª. |
 | **Merges com o upstream** | Alpha privado de um autor só (2.0.0a1 saiu em 04/10/2026): churn alto; nossas mudanças (idioma, Linux, GPU, live local, busca) tocam `config.py`, `note.py`, `prep.py`, `cleanup.py`, `live/*`, `pipeline/run.py` → rebases dolorosos. | Não existe upstream; o CrunchLog instalado vira **oráculo** de testes diferenciais (mesmo bundle → comparar turnos). |
 | **pt-BR / Linux / GPU-first** | Tudo é retrofit: inglês hard-coded em 10+ pontos, "sem torch e sem GPU" é decisão de arquitetura (ADR 0003), dashboard stdlib sem WebSocket. | Projetado assim desde o `meta.json` (campo `language`), motor único NeMo-Speech.cpp (ASR pt-BR + diarização + VAD + pontuação, CPU/CUDA/Metal nos 3 SOs), live local nativo. |
 | **Risco** | Legal (publicar por engano), dependência de um autor, código que não conhecemos a fundo. | Clean-room (disciplina para não copiar), esforço do helper macOS, menos testes no início. |
-| **Encaixe com o INEMA** | Ferramenta privada do Nei. | Projeto publicável, com guia trilíngue e curso derivado. |
+| **Encaixe com o ARCKHé AI** | Ferramenta privada do Nei. | Projeto publicável, com guia trilíngue e curso derivado. |
 
-**Recomendação: recriar do zero**, como implementação independente inspirada nas ideias do CrunchLog (duas faixas, mic = Eu, gate, bundle como fonte de verdade, supervisor com STOP/locks, rerender, doctor com benchmark, MCP como cliente do CLI, demo com gabarito, resumo pela assinatura). Motivos decisivos: (1) o produto precisa ser **público** para ser um produto INEMA; (2) pt-BR/Linux/GPU são a espinha, não um remendo; (3) o motor que a pesquisa apontou (NeMo-Speech.cpp + Nemotron 3.5/3) muda a arquitetura de engines de qualquer jeito; (4) o CrunchLog continua útil **como está**: ferramenta do dia a dia durante a construção e oráculo para testes diferenciais (uso permitido pela licença).
+**Recomendação: recriar do zero**, como implementação independente inspirada nas ideias do CrunchLog (duas faixas, mic = Eu, gate, bundle como fonte de verdade, supervisor com STOP/locks, rerender, doctor com benchmark, MCP como cliente do CLI, demo com gabarito, resumo pela assinatura). Motivos decisivos: (1) o produto precisa ser **público** para ser um produto ARCKHé AI; (2) pt-BR/Linux/GPU são a espinha, não um remendo; (3) o motor que a pesquisa apontou (NeMo-Speech.cpp + Nemotron 3.5/3) muda a arquitetura de engines de qualquer jeito; (4) o CrunchLog continua útil **como está**: ferramenta do dia a dia durante a construção e oráculo para testes diferenciais (uso permitido pela licença).
 
 Se o autor conceder permissão escrita no futuro, nada impede importar partes dele; a proposta não depende disso.
 
@@ -28,7 +28,7 @@ Se o autor conceder permissão escrita no futuro, nada impede importar partes de
 
 | Nome | CLI / repo | Prós | Contras |
 |---|---|---|---|
-| **Ata** (recomendado) | `ata`, `inematds/ata`, `ata.inema.club` | "Ata" = registro oficial de reunião em pt-BR; 3 letras; `ata start`, `ata ask`, `ata.db`; soa bem em ES ("acta") | genérico demais para busca na web (usar "Ata INEMA") |
+| **Ata** (recomendado) | `ata`, `linnoff88-dev/ata`, `ata.linnoff88-dev.github.io` | "Ata" = registro oficial de reunião em pt-BR; 3 letras; `ata start`, `ata ask`, `ata.db`; soa bem em ES ("acta") | genérico demais para busca na web (usar "Ata ARCKHé AI") |
 | **Pauta** | `pauta` | cobre antes (pauta) e depois (ata); palavra viva em pt-BR | sugere agenda mais do que transcrição |
 | **Escriba** | `escriba` | persona (quem escreve por você); igual em ES, legível em EN | 7 letras; conota serviço humano |
 
@@ -38,8 +38,8 @@ O restante do documento usa **Ata**.
 
 ## 2. Para quem
 
-1. **Nei / INEMA** (uso diário, host GB10, Linux): reuniões de projeto, mentorias, lives, entrevistas; notas no segundo cérebro (`astra-2cerebro`) e consulta via Claude Code/Codex.
-2. **Alunos e seguidores do INEMA** (Windows e macOS, sem GPU): instalar com um comando, gravar Meet/Zoom/Teams sem bot, nota em pt-BR, tudo local.
+1. **Nei / ARCKHé AI** (uso diário, host GB10, Linux): reuniões de projeto, mentorias, lives, entrevistas; notas no segundo cérebro (`astra-2cerebro`) e consulta via Claude Code/Codex.
+2. **Alunos e seguidores do ARCKHé AI** (Windows e macOS, sem GPU): instalar com um comando, gravar Meet/Zoom/Teams sem bot, nota em pt-BR, tudo local.
 3. **Pesquisadores / educadores** que precisam de transcrição com quem-falou-quando e podem citar `[reunião, mm:ss]`.
 4. **Agentes** (Claude Code, Codex, n8n): o produto é também uma API local de memória de reuniões.
 
@@ -164,7 +164,7 @@ Camadas e contratos (documentados em `docs/CONTRATO.md` do novo repo, com docstr
 | X3 | AEC3 opcional; detecção de reunião (nós PipeWire ativos / sessões de áudio / processos) e auto start/stop; tray; notificações nos 3 SOs |
 | X4 | Calendário (Google via conector já autorizado no openpcbotv3) para prep e título automático |
 | X5 | **Agentic OS (opcional)**: `ata connect agentic-os` registrando o MCP em escopo usuário e um vault que a página Memory varre; Live page local alimentando a cola — mesmo desenho do CrunchLog, sem a AssemblyAI |
-| X6 | Importação de gravações de celular (Apple Notes/Plaud), tradução pt↔en↔es da nota (Codex por assinatura), vídeo-aula a partir da reunião (skills INEMA) |
+| X6 | Importação de gravações de celular (Apple Notes/Plaud), tradução pt↔en↔es da nota (Codex por assinatura), vídeo-aula a partir da reunião (skills ARCKHé AI) |
 
 ---
 
@@ -286,17 +286,17 @@ Motores comparados na fase 0: Parakeet v2, v3, TAGARELA, Nemotron 3.5 (offline e
 | Disco a 95 % (211 GB) | alta | médio | orçamento por fase; modelos em `/mnt/hd8t` com symlink; limpeza antes da fase 0 |
 | Voiceprints = biometria (LGPD) | média | alto | opt-in, local, apagável, sem export; aviso no setup |
 | Modelos/licenças mudam (NC, gated) | média | médio | `models.lock` com licença por modelo; `ata doctor --licenses` |
-| Um só mantenedor / build por agente | alta | médio | fases curtas com "pronto" mensurável; `longrun/` do método INEMA; testes como portão |
+| Um só mantenedor / build por agente | alta | médio | fases curtas com "pronto" mensurável; `longrun/` do método ARCKHé AI; testes como portão |
 
 ---
 
 ## 14. Plano de construção (recomendado: recriar do zero)
 
-Tempo em semanas de build por agente, com revisão humana no fim de cada fase. Cada fase termina com commit + push (`inematds/ata`, autor `inematds`) e "pronto" verificável.
+Tempo em semanas de build por agente, com revisão humana no fim de cada fase. Cada fase termina com commit + push (`linnoff88-dev/ata`, autor `linnoff88-dev`) e "pronto" verificável.
 
 ### Fase 0 — Fundação e medição (semana 1)
 
-Entregas: repo público `inematds/ata` (MIT), `docs/CONTRATO.md` (bundle `ata/1`, protocolos, vocabulário), `ata doctor`, `ata engine install|start|status`, leitor de bundle CrunchLog v2, `ata bench asr|diar`, `longrun/` com goal/plan/state.
+Entregas: repo público `linnoff88-dev/ata` (MIT), `docs/CONTRATO.md` (bundle `ata/1`, protocolos, vocabulário), `ata doctor`, `ata engine install|start|status`, leitor de bundle CrunchLog v2, `ata bench asr|diar`, `longrun/` com goal/plan/state.
 
 | Pronto quando | Comando → saída esperada |
 |---|---|
@@ -342,7 +342,7 @@ Entregas: dashboard (V7), Windows (V8), guia trilíngue `guia/`, card no portal,
 |---|---|
 | Dashboard | `ata dashboard` → `http://127.0.0.1:<porta>/?t=…`; gravar, ver faixas + transcrição sincronizada, renomear, editar turno, Live page |
 | Windows | em máquina Windows: `uv tool install ata; ata setup; ata demo --lang pt-BR` → mesmos critérios da fase 1; `ata check-audio --tone` → far e mic com sinal |
-| Guia e portal | `guia/index.html`, `guia/en/`, `guia/es/` publicados; `https://inematds.github.io/ata/guia/` responde; card no inema.club |
+| Guia e portal | `guia/index.html`, `guia/en/`, `guia/es/` publicados; `https://linnoff88-dev.github.io/ata/guia/` responde; card no linnoff88-dev.github.io |
 
 ### Fase 4 — v2 (após a 12ª semana, por prioridade do usuário)
 
@@ -355,7 +355,7 @@ macOS helper (X1) · helper Rust Linux (X2) · AEC3, detecção de reunião, tra
 ## 15. Decisões que o usuário precisa tomar
 
 1. **Rumo**: recriar do zero (recomendado, repo público) ou fork privado.
-2. **Nome**: Ata, Pauta ou Escriba (e o repo `inematds/<nome>`).
+2. **Nome**: Ata, Pauta ou Escriba (e o repo `linnoff88-dev/<nome>`).
 3. **Política de motor**: NeMo-Speech.cpp como motor primário (GPU/CPU, 3 SOs) com onnx-asr/sherpa de fallback — ou o inverso (Python puro primário, sidecar opcional).
 4. **Resumo padrão**: Ollama (nível 0, `qwen3.6:35b-a3b`) por padrão e CLI por assinatura opt-in — ou CLI por padrão como no CrunchLog.
 5. **Voiceprints**: desligados por padrão (opt-in no setup) — ou ligados com aviso.
